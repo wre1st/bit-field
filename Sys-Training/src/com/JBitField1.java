@@ -17,22 +17,15 @@ public class JBitField1 {
 	}
 
 	public static void checkSameCharacters(String str1, String str2) {
-		
-		
-		System.out.println("===========     Similar Characters using Bit Field in Java  =============");
-		int find = 0;
+		int finder = 0;
 
+		
 		for (int i = 0; i < str1.length(); ++i) {
-			int characterIndex = str1.charAt(i) - 'a';
-			int bitPosition = 1 << characterIndex;
-			find |= bitPosition;
+			finder |= (1 <<  str1.charAt(i) - 'a');
 		}
 		
 		for (int i = 0; i < str2.length(); i++) {
-			int characterIndex = str2.charAt(i) - 'a';
-			int bitPosition = 1 << characterIndex;
-
-			if ((find & bitPosition) > 0) {
+ 			if ((finder & (1 <<  str2.charAt(i) - 'a')) > 0) {
 				System.out.println("Common Character: " + str2.charAt(i));
 			}
 
