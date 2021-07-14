@@ -19,12 +19,11 @@ public class JBitField1 {
 	public static void checkSameCharacters(String str1, String str2) {
 		int finder = 0;
 
-		
-		for (int i = 0; i < str1.length(); ++i) {
+		for (byte i = 0; i < str1.length(); ++i) {
 			finder |= (1 <<  str1.charAt(i) - 'a');
 		}
 		
-		for (int i = 0; i < str2.length(); i++) {
+		for (byte i = 0; i < str2.length(); i++) {
  			if ((finder & (1 <<  str2.charAt(i) - 'a')) > 0) {
 				System.out.println("Common Character: " + str2.charAt(i));
 			}
